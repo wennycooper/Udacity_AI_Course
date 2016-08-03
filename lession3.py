@@ -14,10 +14,8 @@ from math import *
 import random
 
 
-
 landmarks  = [[20.0, 20.0], [80.0, 80.0], [20.0, 80.0], [80.0, 20.0]]
 world_size = 100.0
-
 
 class robot:
     def __init__(self):
@@ -38,7 +36,6 @@ class robot:
         self.x = float(new_x)
         self.y = float(new_y)
         self.orientation = float(new_orientation)
-    
     
     def set_noise(self, new_f_noise, new_t_noise, new_s_noise):
         # makes it possible to change the noise parameters
@@ -109,7 +106,6 @@ def eval(r, p):
         err = sqrt(dx * dx + dy * dy)
         sum += err
     return sum / float(len(p))
-
 
 
 ####   DON'T MODIFY ANYTHING ABOVE HERE! ENTER CODE BELOW ####
