@@ -3,10 +3,10 @@
 p=[0.2, 0.2, 0.2, 0.2, 0.2]
 n=5
 world = ['green', 'red', 'red', 'green', 'green']
-measurements = ['red', 'red']
-motions = [1, 1] 
-pHit = 0.6
-pMiss = 0.2
+measurements = ['red', 'red', 'red', 'green', 'red']
+motions = [1, 1, -1, -1, 1] 
+pHit = 0.9
+pMiss = 0.1
 pExact = 0.8
 pOvershoot = 0.1
 pUndershoot = 0.1
@@ -33,7 +33,8 @@ def move(p, U):
     return q
 
 for k in range(len(measurements)):
-    p = sense(p, measurements[k])
+    #p = sense(p, measurements[k])
     p = move(p, motions[k])
+    p = sense(p, measurements[k])
 
 print p
